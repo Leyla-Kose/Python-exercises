@@ -7,40 +7,34 @@ def phonebook():
     print(phonebook_menu)
     selection = input('Select operation on Phonebook App (1/2/3): ')
     
-    if selection in '1234':
-      if selection == '4':
-        print('Exiting Phonebook')
-        break
+    if selection == '4':
+      print('Exiting Phonebook')
+      break
 
-      elif selection == '1':
-        find_name = input('Find the phone number of :')
-        if find_name in phonebook:
-          print(phonebook[find_name], '\n')
-          continue
-        else:
-          print(f'Couldn\'t find phone number of {find_name}\n')
-          continue
+    elif selection == '1':
+      find_name = input('Find the phone number of :')
+      if find_name in phonebook:
+        print(phonebook[find_name], '\n')     
+      else:
+        print(f'Couldn\'t find phone number of {find_name}\n')
 
-      elif selection == '2':
-        add_name = input('Insert name of the person: ')
-        phone = input('Insert phone number of the person: ')
-        if phone.isdigit():
-          phonebook[add_name] = phone
-          print(f'Phone number of {add_name} is inserted into the phonebook\n')
-          continue
-        else:
-          print('Invalid input format, cancelling operation ...\n')
-          continue
+    elif selection == '2':
+      add_name = input('Insert name of the person: ')
+      phone = input('Insert phone number of the person: ')
+      if phone.isdigit():
+        phonebook[add_name] = phone
+        print(f'Phone number of {add_name} is inserted into the phonebook\n')
+      else:
+        print('Invalid input format, cancelling operation ...\n')
 
-      elif selection == '3':
-        delete_name = input('Whom to delete from phonebook: ')
-        if delete_name in phonebook:
-          del phonebook[delete_name]
-          print(f'{delete_name} is deleted from the phonebook.\n')
-          continue
-        else: 
-          print(f'{delete_name} doesn\'t exist!\n')
-          continue
+    elif selection == '3':
+      delete_name = input('Whom to delete from phonebook: ')
+      if delete_name in phonebook:
+        del phonebook[delete_name]
+        print(f'{delete_name} is deleted from the phonebook.\n')
+      else: 
+         print(f'{delete_name} doesn\'t exist!\n')
+
     else:
       print('Invalid operation selection, try again!\n')
       continue
