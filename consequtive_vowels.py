@@ -1,13 +1,8 @@
 def consecutive_vowels():
   s = input('Please enter a string: ').lower()
-  if len(s) <= 1:
-    return 'Negative'
   for i in range(len(s)-1):
     if s[i] in 'aeoui' and s[i+1] in 'aeoui':
       return 'Positive'
-      break
-    else:
-      continue
   return 'Negative'
 
 consecutive_vowels()
