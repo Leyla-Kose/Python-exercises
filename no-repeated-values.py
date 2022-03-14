@@ -15,7 +15,21 @@ def single_items(items):
 
 single_items(products)
 
+# Second Solution
 
+
+products = ["Pride and Prejudice", "To Kill a Mockingbird", "The Great Gatsby",\
+"One Hundred Years of Solitude", "Pride and Prejudice", "In Cold Blood", "Wide Sargasso Sea",\
+"One Hundred Years of Solitude", "Brave New World",  "The Great Gatsby", "Brave New World",\
+"I Capture The Castle", "Brave New World", "The Great Gatsby", "The Great Gatsby",\
+"One Hundred Years of Solitude", "Pride and Prejudice"]
+
+def single_items(items):
+  for i in items:
+    if i not in items[items.index(i)+1:-1]:
+      print(i)
+
+single_items(products)
 
 
 
